@@ -19,7 +19,7 @@ const markCommit = async (date) => {
   await jsonfile.writeFile(path, data);
   const git = simpleGit();
   await git.add([path]);
-  await git.commit(date.toISOString(), { "--date": date.toISOString() });
+  await git.commit(date.toISOString() + " haha :)", { "--date": date.toISOString() });
 };
 
 const makeCommits = async (n) => {
@@ -45,4 +45,4 @@ const makeCommits = async (n) => {
   await git.push();
 };
 
-makeCommits(500);
+makeCommits(10000);
